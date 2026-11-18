@@ -1,0 +1,34 @@
+{
+  "name": "codex-remote-console",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted web console for local and remote Codex conversations",
+  "scripts": {
+    "start": "node scripts/start-hub.mjs",
+    "test": "node --test",
+    "check": "node --check server.mjs && node --check gateway.mjs && node --check lib/thread-sync.mjs && node --check lib/codex.mjs && node --check lib/auth.mjs && node --check lib/questions.mjs && node --check scripts/set-credentials.mjs && node --check public/app.js && node --check lib/attachments.mjs && node --check public/markdown.mjs && node --check public/questions.mjs && node --check agent-connect.mjs && node --check lib/stdio-socket.mjs && node --check lib/machines.mjs && node --check lib/connector-package.mjs && node --check lib/settings.mjs && node --check scripts/start-hub.mjs && node --check scripts/audit-source.mjs && node --check scripts/export-source.mjs",
+    "setup": "node scripts/set-credentials.mjs",
+    "gateway": "node gateway.mjs",
+    "privacy:check": "node scripts/audit-source.mjs",
+    "release:source": "node scripts/export-source.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "dompurify": "3.4.18",
+    "marked": "18.2.1",
+    "sharp": "0.35.5",
+    "ws": "^8.18.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qihanchen-bishop/codex-remote-consol.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qihanchen-bishop/codex-remote-consol/issues"
+  },
+  "homepage": "https://github.com/qihanchen-bishop/codex-remote-consol#readme"
+}

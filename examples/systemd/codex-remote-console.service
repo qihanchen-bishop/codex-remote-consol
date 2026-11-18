@@ -1,0 +1,17 @@
+[Unit]
+Description=Codex Remote Console
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/codex-remote-console
+ExecStart=/usr/bin/node %h/codex-remote-console/scripts/start-hub.mjs
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+UMask=0077
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target
